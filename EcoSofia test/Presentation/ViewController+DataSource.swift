@@ -1,6 +1,6 @@
 import UIKit
 
-extension ViewController: UICollectionViewDataSource {
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -37,8 +37,23 @@ extension ViewController: UICollectionViewDataSource {
                 fatalError("Unable to dequeue TopHeaderView")
             }
             header.configure(left: "Партнери", right: "Дивитися всіх")
+            header.delegate = self
             return header
         }
         return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if collectionView == homeView.topCollectionView {
+            return .zero
+        }
+        return .zero
+    }
+}
+
+extension ViewController: TopHeaderViewDelegate {
+    func topHeaderViewDidTapSeeAll() {
+        let vc = PartnersViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

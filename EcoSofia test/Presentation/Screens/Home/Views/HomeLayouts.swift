@@ -14,12 +14,11 @@ struct HomeLayouts {
             section.interGroupSpacing = 19
             section.orthogonalScrollingBehavior = .continuous
             
-            // Calculate the same leading inset as bottom layout
             let containerWidth = environment.container.effectiveContentSize.width
-            let bottomGroupWidth = CGFloat(164 * 2 + 15) // Same calculation as bottom layout
+            let bottomGroupWidth = CGFloat(164 * 2 + 15)
             let leadingInset = max(0, (containerWidth - bottomGroupWidth) / 2)
             
-            section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: leadingInset, bottom: 4, trailing: 0)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: leadingInset, bottom: 16, trailing: 0)
 
             let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(16))
             let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)

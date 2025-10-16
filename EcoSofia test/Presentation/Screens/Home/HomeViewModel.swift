@@ -1,13 +1,22 @@
-import Foundation
+import UIKit
 
 class HomeViewModel {
+    static let placeholderImageName = "placeholder"
+    
     struct Partner {
         let imageName: String
+        init(imageName: String) {
+            self.imageName = imageName
+        }
     }
     
     struct Category {
         let imageName: String
         let title: String
+        init(imageName: String, title: String) {
+            self.imageName = imageName
+            self.title = title
+        }
     }
     
     let partners: [Partner]
@@ -18,7 +27,8 @@ class HomeViewModel {
             Partner(imageName: "partnerCard1"),
             Partner(imageName: "partnerCard2"),
             Partner(imageName: "partnerCard3"),
-            Partner(imageName: "partnerCard4")
+            Partner(imageName: "partnerCard4"),
+            Partner(imageName: "partnerCard5"),
         ]
         
         self.categories = [
@@ -27,9 +37,9 @@ class HomeViewModel {
             Category(imageName: "card3", title: "Заклади"),
             Category(imageName: "card4", title: "Лабораторії"),
             Category(imageName: "card5", title: "Комунальні \nпослуги"),
-            Category(imageName: "card6", title: "Зв’язок"),
+            Category(imageName: "card6", title: "Зв'язок"),
             Category(imageName: "card7", title: "Розваги"),
-            Category(imageName: "card8", title: "Транспорт")
+            Category(imageName: "card8", title: "Транспорт"),
         ]
     }
 }

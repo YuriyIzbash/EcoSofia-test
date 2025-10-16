@@ -1,8 +1,14 @@
 import UIKit
 
+protocol TopHeaderViewDelegate: AnyObject {
+    func topHeaderViewDidTapSeeAll()
+}
+
 final class TopHeaderView: UICollectionReusableView {
     
     static let reuseID = "TopHeaderView"
+    
+    weak var delegate: TopHeaderViewDelegate?
     
     private let leftLabel: UILabel = {
         let label = UILabel()
@@ -17,6 +23,7 @@ final class TopHeaderView: UICollectionReusableView {
         label.font = .systemFont(ofSize: 12, weight: .regular)
         label.textColor = .appText
         label.textAlignment = .right
+        label.isUserInteractionEnabled = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -29,9 +36,19 @@ final class TopHeaderView: UICollectionReusableView {
         return stack
     }()
     
+    private func setupGestures() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleSeeAllTap))
+        rightLabel.addGestureRecognizer(tap)
+    }
+
+    @objc private func handleSeeAllTap() {
+        delegate?.topHeaderViewDidTapSeeAll()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(stackView)
+        setupGestures()
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),

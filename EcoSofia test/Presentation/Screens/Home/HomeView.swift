@@ -46,7 +46,7 @@ final class HomeView: UIView {
         let guide = safeAreaLayoutGuide
 
         NSLayoutConstraint.activate([
-            topCollectionView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 12),
+            topCollectionView.topAnchor.constraint(equalTo: topAnchor, constant: 70),
             topCollectionView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 18),
             topCollectionView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -18),
             topCollectionView.heightAnchor.constraint(equalToConstant: 121)

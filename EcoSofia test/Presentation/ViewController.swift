@@ -26,14 +26,16 @@ final class ViewController: UIViewController {
         homeView.topCollectionView.register(TopCircleCell.self, forCellWithReuseIdentifier: TopCircleCell.reuseID)
         homeView.topCollectionView.register(TopHeaderView.self,
                                    forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                   withReuseIdentifier: TopHeaderView.reuseID)
+                                   withReuseIdentifier: "TopHeaderView")
         homeView.topCollectionView.dataSource = self
+        homeView.topCollectionView.delegate = self
         homeView.topCollectionView.isScrollEnabled = false
         homeView.topCollectionView.alwaysBounceVertical = false
         homeView.topCollectionView.showsVerticalScrollIndicator = false
 
         homeView.bottomCollectionView.register(BottomGridCell.self, forCellWithReuseIdentifier: BottomGridCell.reuseID)
         homeView.bottomCollectionView.dataSource = self
+        homeView.bottomCollectionView.delegate = self
     }
 }
 
