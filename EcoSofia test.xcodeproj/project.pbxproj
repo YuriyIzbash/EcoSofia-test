@@ -14,7 +14,7 @@
 		5BB8B9EE2EA0CC4E00455A8F /* Exceptions for "EcoSofia test" folder in "EcoSofia test" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Configuration/Info.plist,
 			);
 			target = 5BB8B9DB2EA0CC4D00455A8F /* EcoSofia test */;
 		};
@@ -147,7 +147,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WYP88K3VD6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "EcoSofia test/Info.plist";
+				INFOPLIST_FILE = "EcoSofia test/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -179,7 +179,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WYP88K3VD6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "EcoSofia test/Info.plist";
+				INFOPLIST_FILE = "EcoSofia test/Configuration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
